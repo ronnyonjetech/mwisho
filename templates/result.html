@@ -1,12 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
+   <style>
+
+    .back_home{
+        margin-top: 50px;
+        margin-left: 50px;
+        
+      }
+      .extraClass {
+        font-size: 40px;
+        color: #fff;
+      }
+    * {
+        box-sizing: border-box;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      
+      input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+   </style>
+    
 </head>
 <body>
-    <h1>Results and Experiments Here</h1>
+    <!--<form action="add" method="post">
+        {% csrf_token %}
+       Enter number of Pregnancies:<input type="text" name="num1"><br>
+       Enter Glucose level:<input type="text" name="num2"><br>
+       Enter Blood Pressure level:<input type="text" name="num3"><br>
+       Enter Skin Thickness:<input type="text" name="num4"><br>
+       Enter Insulin level:<input type="text" name="num5"><br>
+       Enter BMI:<input type="text" name="num6"><br>
+       Enter Diabetes Prediction Pedigree:<input type="text" name="num7"><br>
+       Enter Age:<input type="text" name="num8"><br>
+       <input type="submit">
+    </form>-->
+
+    <div class="container">
+        <form action="add" method="post">
+            {% csrf_token %}
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">No. of Pregnancies</label>
+          </div>
+          <div class="col-75">
+            <input type="text"  name="num1" placeholder="">
+          </div>
+        </div><br>
+
+
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Glucose level</label>
+          </div>
+          <div class="col-75">
+            <input type="text"  name="num2" placeholder="">
+          </div>
+        </div><br>
+
+
+        <div class="row">
+            <div class="col-25">
+              <label for="lname">Blood Pressure level</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num3" placeholder="">
+            </div>
+          </div><br>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Skin Thickness</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num4" placeholder="">
+            </div>
+          </div><br>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Insulin level</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num5" placeholder="">
+            </div>
+          </div><br>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname"> BMI</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num6" placeholder="">
+            </div>
+          </div><br>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Diabetes Prediction Pedigree</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num7" placeholder="">
+            </div>
+          </div><br>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Age</label>
+            </div>
+            <div class="col-75">
+              <input type="text"  name="num8" placeholder="">
+            </div>
+          </div><br><br>
+
+
+        <div class="row">
+          <input type="submit" value="Predict">
+        </div>
+        </form>
+      </div>
+      
 </body>
 </html>
